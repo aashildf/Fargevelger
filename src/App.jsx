@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Figure from "./components/Figure";
+import ColorSelector from "./components/ColorSelector"
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const initialColors ={
+    tail: "#ffcc00",
+    belly: "#ffcc00",
+    "hind-leg": "#ffcc00",
+    body: "#ffcc00",
+    chest: "#ffcc00",
+    "right-ear": "#ffcc00",
+    "left-ear": "#ffcc00",
+    forehead: "#ffcc00",
+    "right-eyeball": "#ffffff",
+    "left-eyeball": "#ffffff",
+    "right-eyesocket": "#ffcc00",
+    "left-eyesocket": "#ffcc00",
+    "right-eye": "#000000",
+    "left-eye": "#000000",
+    head: "#ffcc00",
+  };
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const[colors, setColors] = useState(initialColors);
+  const [selectedPart, setSelectedPart] = useState("head");
+
+  return(
+    <div className='app'>
+    <h1>Fargelegg Reven!</h1>
+    <ColorSelector
+    selectedPart={selectedPart}
+    setSelectedPart={setSelectedPart}
+    colors={colors}
+    setColors={setColors}/>
+    
+    <Figure colors={colors} setColors={setColors}/>
+    </div>
+  );
 }
-
-export default App
