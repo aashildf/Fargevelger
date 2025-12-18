@@ -5,25 +5,25 @@ import './App.css';
 
 export default function App() {
   const initialColors = {
-    tail: "#ffffff",
-    belly: "#ffffff",
-    "hind-leg": "#ffffff",
-    body: "#ffffff",
-    chest: "#ffffff",
-    "right-ear": "#ffffff",
-    "left-ear": "#ffffff",
-    forehead: "#ffffff",
-    "right-pupil": "#ffffff",
-    "left-pupil": "#ffffff",
-    "right-face": "#ffffff",
-    "left-face": "#ffffff",
-    "left-eye": "#ffffff",
-    "right-eye": "#ffffff",
-    head: "#ffffff",
+    Tail: "#ffffff",
+    Belly: "#ffffff",
+    "Hind-leg": "#ffffff",
+    Body: "#ffffff",
+    Chest: "#ffffff",
+    "Right-ear": "#ffffff",
+    "Left-ear": "#ffffff",
+    Forehead: "#ffffff",
+    "Right-pupil": "#ffffff",
+    "Left-pupil": "#ffffff",
+    "Right-face": "#ffffff",
+    "Left-face": "#ffffff",
+    "Left-eye": "#ffffff",
+    "Right-eye": "#ffffff",
+    Head: "#ffffff",
   };
 
   const[colors, setColors] = useState(initialColors);
-  const [selectedPart, setSelectedPart] = useState("head");
+  const [selectedPart, setSelectedPart] = useState("Tail");
 
   return(
     <div className='app'>
@@ -34,7 +34,7 @@ export default function App() {
     colors={colors}
     setColors={setColors}/>
     
-    <Figure colors={colors} setColors={setColors}/>
+    <Figure colors={colors} setSelectedPart={setSelectedPart}/>
     </div>
   );
 }
