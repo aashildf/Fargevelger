@@ -27,7 +27,7 @@ export default function App() {
 
   return(
     <div className='app'>
-    <h1>Fargelegg Reven!</h1>
+    <h1>Color the fox!</h1>
     <ColorSelector
     selectedPart={selectedPart}
     setSelectedPart={setSelectedPart}

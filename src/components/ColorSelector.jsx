@@ -19,7 +19,7 @@ export default function ColorSelector({ selectedPart, setSelectedPart, colors, s
 return (
   <div className="color-selector">
     <p className="part">
-      Velg del å fargelegge:{" "}
+      Choose a part to color:{" "}
       <span className="selected-part">{selectedPart}</span>
     </p>
     <select
