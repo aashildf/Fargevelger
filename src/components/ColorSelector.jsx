@@ -1,7 +1,7 @@
 
 
 export default function ColorSelector({ selectedPart, setSelectedPart, colors, setColors}){
-    const colorOptions = ["#ff0000", "#00ff00", "#0000ff", "#ffff00"];
+    const colorOptions = ["#533308ff", "#f48d18ff", "#7f6f5cff", "#4f4a5efb"];
 
 return(
     <div className="color-selector">

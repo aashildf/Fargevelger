@@ -4,22 +4,22 @@ import ColorSelector from "./components/ColorSelector"
 import './App.css';
 
 export default function App() {
-  const initialColors ={
-    tail: "#ffcc00",
-    belly: "#ffcc00",
-    "hind-leg": "#ffcc00",
-    body: "#ffcc00",
-    chest: "#ffcc00",
-    "right-ear": "#ffcc00",
-    "left-ear": "#ffcc00",
-    forehead: "#ffcc00",
-    "right-eyeball": "#ffffff",
-    "left-eyeball": "#ffffff",
-    "right-eyesocket": "#ffcc00",
-    "left-eyesocket": "#ffcc00",
-    "right-eye": "#000000",
-    "left-eye": "#000000",
-    head: "#ffcc00",
+  const initialColors = {
+    tail: "#ffffff",
+    belly: "#ffffff",
+    "hind-leg": "#ffffff",
+    body: "#ffffff",
+    chest: "#ffffff",
+    "right-ear": "#ffffff",
+    "left-ear": "#ffffff",
+    forehead: "#ffffff",
+    "right-pupil": "#ffffff",
+    "left-pupil": "#ffffff",
+    "right-face": "#ffffff",
+    "left-face": "#ffffff",
+    "left-eye": "#ffffff",
+    "right-eye": "#ffffff",
+    head: "#ffffff",
   };
 
   const[colors, setColors] = useState(initialColors);
