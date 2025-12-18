@@ -23,7 +23,7 @@ return (
       <span className="selected-part">{selectedPart}</span>
     </p>
     <select
-    className="part-select"
+      className="part-select"
       value={selectedPart}
       onChange={(e) => setSelectedPart(e.target.value)}
     >
@@ -34,18 +34,11 @@ return (
       ))}
     </select>
 
-    <div
-      style={{
-        display: "flex",
-        gap: "1rem",
-        marginTop: "2rem",
-        marginBottom: "4rem",
-      }}
-    >
+    <div className="color-options">
       {colorOptions.map((c) => (
         <button
           key={c}
-          style={{ backgroundColor: c, width: "50px", height: "50px" }}
+          className="color-button"
           onClick={() => setColors({ ...colors, [selectedPart]: c })}
         ></button>
       ))}
