@@ -24,6 +24,49 @@ export default function App() {
   const[colors, setColors] = useState(initialColors);
   const [selectedPart, setSelectedPart] = useState("Tail");
 
+
+// -----------nullstill fargene----------
+const resetColors = () => {
+  if(window.confirm("Do you want to erase all colors and start over?")){
+    setColors(initialColors);
+  }
+};
+
+// ------lagre som bilde-funskjon-----
+const downloadFox = ()=> {
+  const svg = document.querySelector("svg");
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const img = new Image(); 
+
+
+// høy oppløsning for nedlasting
+canvas.width = 1183;
+canvas.height = 663;
+
+const svgBlob = new Blob ([svgData], {type: "image/svg+xml;charset=utf-8" });
+const url = URL.createObjectURL(svgBlob);
+
+img.onload = () => {
+  // Tegn hvit bakgrunn (valgfritt, fjern fyll hvis du vil ha gjennomsiktig)
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img, 0, 0);
+  URL.revokeObjectURL(url);
+
+  const pngUrl = canvas.toDataURL("image/png");
+      const downloadLink = document.createElement("a");
+      downloadLink.href = pngUrl;
+      downloadLink.download = "min_fargerike_rev.png";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    };
+    img.src = url;
+  };
+
+
   return (
     <div className="app">
       <h1>Color the fox!</h1>
@@ -33,6 +76,10 @@ export default function App() {
         colors={colors}
         setColors={setColors}
       />
+<div className='action-buttons'>
+  <button className='secondary-button' onClick={resetColors}>Start over</button>
+  <button className='primary-button' onClick={downloadFox}>Save picture</button>
+</div>
 
       <Figure
         colors={colors}

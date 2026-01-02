@@ -40,7 +40,9 @@ return (
       {colorOptions.map((c) => (
         <button
           key={c}
-          className="color-button"
+          className={`color-button ${
+            colors[selectedPart] === c ? "active-color" : ""
+          }`}
           style={{ backgroundColor: c }}
           onClick={() => setColors({ ...colors, [selectedPart]: c })}
         ></button>
