@@ -24,16 +24,21 @@ export default function App() {
   const[colors, setColors] = useState(initialColors);
   const [selectedPart, setSelectedPart] = useState("Tail");
 
-  return(
-    <div className='app'>
-    <h1>Color the fox!</h1>
-    <ColorSelector
-    selectedPart={selectedPart}
-    setSelectedPart={setSelectedPart}
-    colors={colors}
-    setColors={setColors}/>
-    
-    <Figure colors={colors} setSelectedPart={setSelectedPart}/>
+  return (
+    <div className="app">
+      <h1>Color the fox!</h1>
+      <ColorSelector
+        selectedPart={selectedPart}
+        setSelectedPart={setSelectedPart}
+        colors={colors}
+        setColors={setColors}
+      />
+
+      <Figure
+        colors={colors}
+        setSelectedPart={setSelectedPart}
+        selectedPart={selectedPart}
+      />
     </div>
   );
 }
