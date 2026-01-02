@@ -19,32 +19,9 @@ html, body {
   height: 100%; 
 }
 
-.part {
-  font-weight: 500;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);/* skalerer automatisk */
-  color: #090909;
-}
 
-
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
-  color: rgba(11, 11, 11, 0.87);
-  background-image: url(/background2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom; 
-  opacity: 0.7;
-  z-index: -1;
-  padding: 1rem;
-} */
 
 body { 
-  /* width: 100%;  */
   min-height: 100svh; 
   overflow-x: hidden; /* hindrer horisontal scroll/zoom-lås */ display: flex; 
   align-items: center; 
@@ -60,7 +37,7 @@ body {
     background-image: url(/background2.png); 
     background-size: cover; 
     background-repeat: no-repeat; 
-    background-position: center; 
+    background-position: bottom; 
     opacity: 0.7; 
     z-index: -1; 
   }
@@ -78,18 +55,27 @@ h1 {
   margin: 0 0 1rem;
 }
 
+/* "choose a part to color"-teksten */
+.part {
+  font-weight: 500;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);/* skalerer automatisk */
+  color: #090909;
+}
 
+
+
+/*--------------NEDTREKKS-MENY---------------*/
 
 .part-select{
   width: 100%;
   max-width: 100%;
   padding: 0.5rem 0.8rem;
   font-size: 1rem;
-  border-radius: 8px;
-  border:2px solid #6c6363;
+  border-radius: 10px;
+  border:2px solid #4b7358;
   cursor: pointer;
 
-  /* fjerne default look */
+  /* fjerner default look */
 appearance: none;
 -webkit-appearance: none;
 -moz-appearance: none;
@@ -104,64 +90,41 @@ background-size: 1rem;
 .part-select:focus-visible,
 .part-select:hover,
 .part-select:focus{
-   outline: 3px solid rgb(129, 45, 45);
+   outline: 3px solid #4b7358;;
    outline-offset: 3px;
 }
 
+.part-select option {
+  padding: 0.5rem;
+  background-color: #e1eae6;
+  color: #222;
+}
 
+
+/* selected-part-teksten */
 .selected-part {
   font-weight: bold;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: rgb(78, 27, 27);     
+  color: #203a28;    
   text-transform: capitalize;
   padding: 0.2rem 0.4rem;
   border-radius: 6px;
 }
 
 
-
-/* Form-elementer: touch-vennlig og responsive */ 
-.controls { 
-  display: grid; 
-  grid-template-columns: 1fr; 
-  gap: 0.75rem; 
-  margin: 1rem 0; 
-}
-
-/* Kort seksjon med luft */ 
-.card { 
-  background: rgba(255,255,255,0.7); 
-  backdrop-filter: blur(2px); 
-  border: 1px solid rgba(0,0,0,0.08); 
-  border-radius: 12px; 
-  padding: 1rem; 
-}
-
-.figure, .figure svg, .figure img { 
-  width: 100%; 
-  max-width: 100%; 
-  height: auto; 
-  display: block; 
-}
-
-
-.color-selector {
-   margin: 1rem 0; } 
+/* -------------FARGEKNAPPENE------------- */
    
    /* Container for fargeknappene */ 
    .color-options { 
     display: flex; 
     flex-wrap: wrap; /* bryter linjen når det blir trangt */ 
     gap: 0.75rem; 
-    margin-top: 2rem; 
-    margin-bottom: 2rem; 
+    margin-top: 3rem; 
+    margin-bottom: 3rem; 
     justify-content: center; } 
     
     /* Selve fargeknappene */ 
     .color-button { 
-      /* appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none; */
       display: inline-block; /* Tvinger synlighet */
       width: 50px; 
       height: 50px; 
@@ -176,15 +139,37 @@ background-size: 1rem;
         transform: scale(0.95);
        }
 
+/* hover og tab-synlighet */
+      .color-button:focus-visible,
+      .color-button:hover,
+      .color-button:focus{
+   outline: 3px solid #4b7358;;
+   outline-offset: 3px;
+}
 
-/* Media */ 
+
+
+
+/* ---------------------MEDIA ------------------*/ 
 @media (max-width: 768px) { 
   .app { max-width: 560px; padding: 1rem; } }
   
-@media (max-width: 480px) {
-  .app {
-    max-width: 420px;
-    padding: 1rem;
+
+  @media (max-width: 480px) {
+  body {
+    display: block; 
+    min-height: auto; 
+    padding: 1rem; 
+  }
+
+  .app{
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  body::before{
+    background-size: cover;
+    background-position: top center;
   }
 
   .color-button {
@@ -192,17 +177,5 @@ background-size: 1rem;
     height: 44px;
   }
 
-  body::before {
-    background-size: contain;
-    background-position: center top;
-    background-color: #f6f6f6;
   }
-}
-
-@media (max-width: 480px) {
-  body::before {
-    background-size: contain;
-    background-position: center top;
-  }
-}
 

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Figure from "./components/Figure";
 import ColorSelector from "./components/ColorSelector"
-import './App.css';
 
 export default function App() {
   const initialColors = {
