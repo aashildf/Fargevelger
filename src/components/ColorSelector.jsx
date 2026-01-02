@@ -16,6 +16,8 @@ export default function ColorSelector({ selectedPart, setSelectedPart, colors, s
       "#b33d3dff",
     ];
 
+    
+
 return (
   <div className="color-selector">
     <p className="part">
@@ -39,6 +41,7 @@ return (
         <button
           key={c}
           className="color-button"
+          style={{ backgroundColor: c }}
           onClick={() => setColors({ ...colors, [selectedPart]: c })}
         ></button>
       ))}
