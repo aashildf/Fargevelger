@@ -2,18 +2,18 @@
 
 export default function ColorSelector({ selectedPart, setSelectedPart, colors, setColors}){
     const colorOptions = [
-      "#533308ff",
-      "#000000",
-      "#ffffff",
-      "#f6bc7aff",
-      "#7f6f5cff",
-      "#4f4a5efb",
-      "#296290fb",
-      "#23513eff",
-      "#5e7475ff",
-      "#c9b531ff",
-      "#8b4513",
-      "#b33d3dff",
+      "#161514ff", // Nesten sortbrun
+      "#3D2B1F", // Deep Bark 
+      "#593D2E", // Mørk sjokolade 
+      "#A67B5B", // Lysere kastanje 
+      "#EBC073", // Solnedgang-gul 
+      "#F4E4AD", // Buttermilk Yellow
+      "#F9F1E6", // Misty Cream
+      "#D9C5B2", // Varm beige
+      "#D4A5A5", // Gammelrosa 
+      "#D8BFD8", // Thistle
+      "#D1D5D8", // Silver Birch
+      "#A8B9C4", // Cloudy Blue
     ];
 
     

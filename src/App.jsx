@@ -49,7 +49,7 @@ const svgBlob = new Blob ([svgData], {type: "image/svg+xml;charset=utf-8" });
 const url = URL.createObjectURL(svgBlob);
 
 img.onload = () => {
-  // Tegn hvit bakgrunn (valgfritt, fjern fyll hvis du vil ha gjennomsiktig)
+  // Tegn hvit bakgrunn 
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(img, 0, 0);
@@ -58,7 +58,7 @@ img.onload = () => {
   const pngUrl = canvas.toDataURL("image/png");
       const downloadLink = document.createElement("a");
       downloadLink.href = pngUrl;
-      downloadLink.download = "min_fargerike_rev.png";
+      downloadLink.download = "my_little_fox.png";
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
@@ -69,23 +69,28 @@ img.onload = () => {
 
   return (
     <div className="app">
-      <h1>Color the fox!</h1>
+      <h1>The Little Fox's Sketchbook</h1>
       <ColorSelector
         selectedPart={selectedPart}
         setSelectedPart={setSelectedPart}
         colors={colors}
         setColors={setColors}
       />
-<div className='action-buttons'>
-  <button className='secondary-button' onClick={resetColors}>Start over</button>
-  <button className='primary-button' onClick={downloadFox}>Save picture</button>
-</div>
-
       <Figure
         colors={colors}
         setSelectedPart={setSelectedPart}
         selectedPart={selectedPart}
       />
+
+      <div className="action-buttons">
+        <button className="secondary-button" onClick={resetColors}>
+          Start over
+        </button>
+        <button className="primary-button" onClick={downloadFox}>
+          Save picture
+        </button>
+      </div>
+
     </div>
   );
 }

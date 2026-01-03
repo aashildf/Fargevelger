@@ -49,19 +49,39 @@ body {
 }
 
 h1 {
-  font-size:clamp(1.6rem, 4vw, 3.2rem);
-  line-height: 1.1;
-  color: #090909;
-  margin: 0 0 1rem;
+  font-size: clamp(2.2rem, 6vw, 4rem); 
+  line-height: 1.2;
+  font-family: 'Georgia', serif; 
+  color: #3D312E; 
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 /* "choose a part to color"-teksten */
 .part {
   font-weight: 500;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);/* skalerer automatisk */
-  color: #090909;
+  font-size: clamp(1.3rem, 3vw, 2rem);/* skalerer automatisk */
+  font-family: 'Georgia', serif; 
+  color: #3D312E; 
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
+
+/* selected-part-teksten */
+.selected-part {
+  font-weight:800;
+  font-family: 'Georgia', serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #203a28;    
+  text-transform: capitalize;
+  text-decoration: underline;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+}
 
 
 /*--------------NEDTREKKS-MENY---------------*/
@@ -101,15 +121,7 @@ background-size: 1rem;
 }
 
 
-/* selected-part-teksten */
-.selected-part {
-  font-weight: bold;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: #203a28;    
-  text-transform: capitalize;
-  padding: 0.2rem 0.4rem;
-  border-radius: 6px;
-}
+
 
 
 /* -------------FARGEKNAPPENE------------- */
@@ -129,7 +141,8 @@ background-size: 1rem;
       width: 50px; 
       height: 50px; 
       background-color: inherit;
-      border: 2px solid #333;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
        border-radius: 6px; 
        cursor: pointer; 
        transition: transform 0.1s ease-in-out;
@@ -154,36 +167,47 @@ background-size: 1rem;
   z-index: 2;
 }
 
+
+/* -----start & save------knapper---------- */
 .action-buttons{
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  max-width: 300px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .primary-button, .secondary-button{
+  flex: 1; /* Dette tvinger begge knappene til å fylle lik plass */
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
-  border: 2px solid #4b7358;
+  text-align: center;
+  white-space: nowrap; /* Hindrer teksten i å hoppe til ny linje */
 }
 
 .primary-button{
-background-color: #4b7358;
+background-color: #3D312E;
 color: white;
+ border: 2px solid #3D312E;
 }
 
 .secondary-button{
   background-color: white;
-  color:#4b7358; ;
+  color:#3D312E;
+  border: 2px solid white;
 }
 
 .primary-button:hover, .secondary-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  opacity: 0.9;
 }
 
 .primary-button:active, .secondary-button:active {
@@ -197,6 +221,17 @@ svg{
   margin: 0 auto;
 }
 
+
+/* ---------------ved hover over reven -------------*/
+path{
+  transition: opacity 0.2s ease, filter 0.2s ease !important;
+}
+
+path:hover {
+  opacity: 0.7 !important;
+  filter:brightness(1.2) !important;
+ cursor: pointer;
+}
 
 /* ---------------------MEDIA ------------------*/ 
 @media (max-width: 768px) { 
