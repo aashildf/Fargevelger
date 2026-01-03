@@ -69,7 +69,7 @@ img.onload = () => {
 
   return (
     <div className="app">
-      <h1>The Little Fox's Sketchbook</h1>
+      <h1>The Little Fox's Colorbook</h1>
       <ColorSelector
         selectedPart={selectedPart}
         setSelectedPart={setSelectedPart}
